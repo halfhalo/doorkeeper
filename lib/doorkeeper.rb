@@ -72,8 +72,8 @@ module Doorkeeper
   end
 
   def self.client=(model)
-    raise "You already have the model #{model} configured as doorkeeper client" if @client.present?
+    #raise "You already have the model #{model} configured as doorkeeper client" if @client.present?
     
-    @client = model.constantize 
+    @client = model
   end
 end
