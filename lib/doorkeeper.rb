@@ -73,7 +73,7 @@ module Doorkeeper
 
   def self.client=(model)
     raise "You already have the model #{model} configured as doorkeeper client" if @client.present?
-    model.first if Rails.env.development?
+    model.first
     @client = model
   end
 end
