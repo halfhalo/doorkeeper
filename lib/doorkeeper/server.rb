@@ -3,6 +3,7 @@ module Doorkeeper
     attr_accessor :context
 
     def initialize(context = nil)
+      Doorkeeper.client=Client
       @context = context
     end
 
