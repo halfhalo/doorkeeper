@@ -68,6 +68,7 @@ module Doorkeeper
   end
 
   def self.client
+    @client.loaded?
     @client
   end
 
