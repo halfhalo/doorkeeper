@@ -68,12 +68,12 @@ module Doorkeeper
   end
 
   def self.client
-    Client
+    @client
   end
 
   def self.client=(model)
     raise "You already have the model #{model} configured as doorkeeper client" if @client.present?
-    @client = model
-    include model
+    
+    @client = model.respond_to?(:to_sym) ? model.to_s.camelize.constantize : model
   end
 end
