@@ -4,6 +4,7 @@ module Doorkeeper
   module Models
     module ActiveRecord
       def doorkeeper_client!(options = {})
+        self.first
         Doorkeeper.client = self
         include Doorkeeper::Models::ActiveRecord::Client
         include Doorkeeper::Models::Registerable
