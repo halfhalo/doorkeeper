@@ -28,6 +28,7 @@ module Doorkeeper
     end
 
     def client_via_uid
+      Doorkeeper.client=Client
       Doorkeeper.client.find_for_oauth_authentication parameters[:client_id]
     end
 
